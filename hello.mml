@@ -1,0 +1,23 @@
+(0000000000000005) FIVE IS 5
+                           LOC     #100
+                   
+ ...100: e3020005  Main    SET     $2,FIVE
+ ...104: 21010205          ADD     $1,$2,5
+ ...108: f4ffxxxx          GETA    $255,hello
+ ...10c: 00000701          TRAP    0,Fputs,StdOut
+ ...110: f4ffxxxx          GETA    $255,byebye
+ ...114: 00000701          TRAP    0,Fputs,StdOut
+ ...118: 00000000          TRAP    0,Halt,0
+                   
+ ...11c: 48656c6c  hello   BYTE    "Hello World",10,0
+ ...120: 6f20576f
+ ...124: 726c640a
+ ...128: 00      
+ ...129:   000000  	BYTE	0,0,0
+ ...12c: 42796500  byebye  BYTE 	"Bye",0
+
+Symbol table:
+ FIVE = #0000000000000005 (2)
+ Main = #0000000000000100 (1)
+ byebye = #000000000000012c (4)
+ hello = #000000000000011c (3)
